@@ -5,8 +5,7 @@ export interface Ticker {
 	value: number;
 }
 
-export class CryptocurrencyTicker {
-	static availableExchanges(): string[];
-	static availablePairs(exchange: string): string[];
-	static ticker(exhange: string, pair: string): Ticker
-}
+export function availableExchanges(): Promise<string[]>;
+export function availablePairs(exchange: string): Promise<string[]>;
+export function ticker(exhange: string, pair: string): Promise<Ticker>;
+
