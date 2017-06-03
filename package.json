@@ -1,0 +1,49 @@
+{
+  "name": "crypto-ticker",
+  "version": "1.0.0",
+  "description": "Get the current ticker information for cryptocurrencies",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sapphiredev/crypto-ticker.git"
+  },
+  "keywords": [
+    "bitcoin",
+    "bithumb",
+    "btc",
+    "bithumb",
+    "coinone",
+    "korbit",
+    "kraken",
+    "poloniex",
+    "coin",
+    "coinone",
+    "crypto",
+    "cryptocurrency",
+    "currency",
+    "eth",
+    "ethereum",
+    "korbit",
+    "kraken",
+    "poloniex",
+    "ticker",
+    "xbt",
+    "xrp"
+  ],
+  "author": "sapphire",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sapphiredev/crypto-ticker/issues"
+  },
+  "homepage": "https://github.com/sapphiredev/crypto-ticker#readme",
+  "dependencies": {
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "chai": "^4.0.1",
+    "mocha": "^3.4.2"
+  }
+}
