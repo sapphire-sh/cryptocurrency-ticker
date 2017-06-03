@@ -1,6 +1,6 @@
 {
   "name": "cryptocurrency-ticker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Get the current ticker information for cryptocurrencies",
   "main": "index.js",
   "scripts": {
