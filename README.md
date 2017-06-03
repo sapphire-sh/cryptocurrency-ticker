@@ -1,15 +1,15 @@
-# crypto-ticker
+# cryptocurrency-ticker
 Get the current ticker information for cryptocurrencies
 
 ## Install
 
 ```bash
-$ npm install -S crypto-ticker
+$ npm install -S cryptocurrency-ticker
 ```
 
 ## Usage
 ```js
-const ticker = require('crypto-ticker');
+const ticker = require('cryptocurrency-ticker');
 
 ticker.availableExchanges().then((exchanges) => {
 	console.log(exchanges);
