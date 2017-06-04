@@ -27,11 +27,7 @@ function availablePairs(exchange) {
 }
 
 function ticker(exchange, pair) {
-	return availablePairs(exchange).then((pairs) => {
-		return pairs.includes(pair) ? Promise.resolve() : Promise.reject();
-	}).then(() => {
-		return exchanges[exchange].ticker(pair);
-	});
+	return exchanges[exchange].ticker(pair);
 }
 
 module.exports = {

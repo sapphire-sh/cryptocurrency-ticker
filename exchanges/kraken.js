@@ -93,8 +93,9 @@ module.exports = {
 						resolve({
 							exchange: 'kraken',
 							pair: pair,
-							timestamp: new Date(),
-							value: parseFloat(x.a.shift())
+							timestamp: (new Date()).getTime(),
+							ask: parseFloat(x.a.shift()),
+							bid: parseFloat(x.b.shift())
 						});
 					}
 					else {

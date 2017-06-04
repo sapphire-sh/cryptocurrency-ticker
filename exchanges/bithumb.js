@@ -22,8 +22,9 @@ module.exports = {
 						resolve({
 							exchange: 'bithumb',
 							pair: pair,
-							timestamp: new Date(x.date),
-							value: parseFloat(x.buy_price)
+							timestamp: parseInt(x.date),
+							ask: parseFloat(x.sell_price),
+							bid: parseFloat(x.buy_price)
 						});
 					}
 					else {

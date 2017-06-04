@@ -14,14 +14,19 @@ module.exports = {
 	ticker: (pair) => {
 		return new Promise((resolve, reject) => {
 			if(pairs.includes(pair)) {
-				request(`https://api.coinone.co.kr/ticker/?currency=${pair.split('_').shift()}&format=json`, (err, res, body) => {
+				request(`https://api.coinone.co.kr/orderbook/?currency=${pair.split('_').shift()}&format=json`, (err, res, body) => {
 					if(!err && res.statusCode === 200) {
 						const x = JSON.parse(body);
 						resolve({
 							exchange: 'coinone',
 							pair: pair,
-							timestamp: new Date(x.timestamp),
-							value: parseFloat(x.last)
+							timestamp: parseInt(x.timestamp),
+							ask: parseFloat(x.ask.sort((a, b) => {
+								return a.price - b.price;
+							}).shift().price),
+							bid: parseFloat(x.bid.sort((a, b) => {
+								return b.price - a.price;
+							}).shift().price)
 						});
 					}
 					else {

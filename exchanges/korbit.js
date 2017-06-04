@@ -13,14 +13,15 @@ module.exports = {
 	ticker: (pair) => {
 		return new Promise((resolve, reject) => {
 			if(pairs.includes(pair)) {
-				request(`https://api.korbit.co.kr/v1/ticker?currency_pair=${pair}`, (err, res, body) => {
+				request(`https://api.korbit.co.kr/v1/ticker/detailed?currency_pair=${pair}`, (err, res, body) => {
 					if(!err && res.statusCode === 200) {
 						const x = JSON.parse(body);
 						resolve({
 							exchange: 'korbit',
 							pair: pair,
-							timestamp: new Date(x.timestamp),
-							value: parseFloat(x.last)
+							timestamp: x.timestamp,
+							ask: parseFloat(x.ask),
+							bid: parseFloat(x.bid)
 						});
 					}
 					else {

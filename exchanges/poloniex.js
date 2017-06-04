@@ -106,8 +106,9 @@ module.exports = {
 						resolve({
 							exchange: 'poloniex',
 							pair: pair,
-							timestamp: new Date(),
-							value: parseFloat(x.last)
+							timestamp: (new Date()).getTime(),
+							ask: parseFloat(x.lowestAsk),
+							bid: parseFloat(x.highestBid)
 						});
 					}
 					else {
@@ -116,7 +117,7 @@ module.exports = {
 				});
 			}
 			else {
-				reject('pair is not supported');
+				reject(new Error('pair is not supported'));
 			}
 		});
 	}
