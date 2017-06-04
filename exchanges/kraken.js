@@ -94,7 +94,7 @@ module.exports = {
 							exchange: 'kraken',
 							pair: pair,
 							timestamp: new Date(),
-							value: parseInt(x.a.shift())
+							value: parseFloat(x.a.shift())
 						});
 					}
 					else {

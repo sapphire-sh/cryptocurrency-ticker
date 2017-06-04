@@ -107,7 +107,7 @@ module.exports = {
 							exchange: 'poloniex',
 							pair: pair,
 							timestamp: new Date(),
-							value: parseInt(x.last)
+							value: parseFloat(x.last)
 						});
 					}
 					else {

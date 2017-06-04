@@ -20,7 +20,7 @@ module.exports = {
 							exchange: 'korbit',
 							pair: pair,
 							timestamp: new Date(x.timestamp),
-							value: parseInt(x.last)
+							value: parseFloat(x.last)
 						});
 					}
 					else {
