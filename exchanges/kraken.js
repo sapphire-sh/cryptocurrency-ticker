@@ -105,9 +105,9 @@ module.exports = {
 						resolve({
 							exchange: 'kraken',
 							pair: pair,
-							timestamp: null,
-							ask: null,
-							bid: null
+							timestamp: undefined,
+							ask: undefined,
+							bid: undefined
 						});
 					}
 				});

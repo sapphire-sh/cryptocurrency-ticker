@@ -118,9 +118,9 @@ module.exports = {
 						resolve({
 							exchange: 'poloniex',
 							pair: pair,
-							timestamp: null,
-							ask: null,
-							bid: null
+							timestamp: undefined,
+							ask: undefined,
+							bid: undefined
 						});
 					}
 				});
