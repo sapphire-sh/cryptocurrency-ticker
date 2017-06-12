@@ -100,7 +100,10 @@ module.exports = {
 	ticker: (pair) => {
 		return new Promise((resolve, reject) => {
 			if(pairs.includes(pair)) {
-				request('https://poloniex.com/public?command=returnTicker', (err, res, body) => {
+				request({
+					url: 'https://poloniex.com/public?command=returnTicker',
+					timeout: 2000
+				}, (err, res, body) => {
 					if(!err && res.statusCode === 200) {
 						const x = JSON.parse(body)[pair.toUpperCase()];
 						resolve({
@@ -112,7 +115,13 @@ module.exports = {
 						});
 					}
 					else {
-						reject(err);
+						resolve({
+							exchange: 'poloniex',
+							pair: pair,
+							timestamp: null,
+							ask: null,
+							bid: null
+						});
 					}
 				});
 			}

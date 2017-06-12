@@ -87,7 +87,10 @@ module.exports = {
 				else {
 					kraken_pair = k.map((e) => { return symbols[e]; }).join('').toUpperCase();
 				}
-				request(`https://api.kraken.com/0/public/Ticker?pair=${kraken_pair}`, (err, res, body) => {
+				request({
+					url: `https://api.kraken.com/0/public/Ticker?pair=${kraken_pair}`,
+					timeout: 2000
+				}, (err, res, body) => {
 					if(!err && res.statusCode === 200) {
 						const x = JSON.parse(body).result[kraken_pair];
 						resolve({
@@ -99,7 +102,13 @@ module.exports = {
 						});
 					}
 					else {
-						reject(err);
+						resolve({
+							exchange: 'kraken',
+							pair: pair,
+							timestamp: null,
+							ask: null,
+							bid: null
+						});
 					}
 				});
 			}

@@ -16,7 +16,10 @@ module.exports = {
 	ticker: (pair) => {
 		return new Promise((resolve, reject) => {
 			if(pairs.includes(pair)) {
-				request(`https://api.bithumb.com/public/ticker/${pair.split('_').shift().toUpperCase()}`, (err, res, body) => {
+				request({
+					url: `https://api.bithumb.com/public/ticker/${pair.split('_').shift().toUpperCase()}`,
+					timeout: 2000
+				}, (err, res, body) => {
 					if(!err && res.statusCode === 200) {
 						const x = JSON.parse(body).data;
 						resolve({
@@ -28,7 +31,13 @@ module.exports = {
 						});
 					}
 					else {
-						reject(err);
+						resolve({
+							exchange: 'bithumb',
+							pair: pair,
+							timestamp: null,
+							ask: null,
+							bid: null
+						});
 					}
 				});
 			}

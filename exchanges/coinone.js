@@ -14,7 +14,10 @@ module.exports = {
 	ticker: (pair) => {
 		return new Promise((resolve, reject) => {
 			if(pairs.includes(pair)) {
-				request(`https://api.coinone.co.kr/orderbook/?currency=${pair.split('_').shift()}&format=json`, (err, res, body) => {
+				request({
+					url: `https://api.coinone.co.kr/orderbook/?currency=${pair.split('_').shift()}&format=json`,
+					timeout: 2000
+				}, (err, res, body) => {
 					if(!err && res.statusCode === 200) {
 						const x = JSON.parse(body);
 						resolve({
@@ -30,7 +33,13 @@ module.exports = {
 						});
 					}
 					else {
-						reject(err);
+						resolve({
+							exchange: 'coinone',
+							pair: pair,
+							timestamp: null,
+							ask: null,
+							bid: null
+						});
 					}
 				});
 			}
