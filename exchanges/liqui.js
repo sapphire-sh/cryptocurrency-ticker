@@ -1,7 +1,6 @@
 'use strict';
 
 const request = require('request');
-const util = require('util');
 
 const pairs = [
   'ltc_btc',
