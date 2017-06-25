@@ -61,6 +61,22 @@ describe('ticker', () => {
 		{
 			echange: 'gemini',
 			pair: 'btc_usd'
+    },
+    {
+			exchange: 'lykke',
+			pair: 'btc_jpy'
+    },
+    {
+			exchange: 'bitfinex',
+			pair: 'xrp_usd'
+    },
+    {
+			exchange: 'bitstamp',
+			pair: 'xrp_usd'
+    },
+    {
+			exchange: 'uphold',
+			pair: 'xpd_usd'
 		},
 	].forEach((e) => {
 		it(`should return a ticker: ${e.exchange}`, (done) => {
