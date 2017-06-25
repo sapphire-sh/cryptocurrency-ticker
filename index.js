@@ -5,13 +5,15 @@ const coinone = require('./exchanges/coinone');
 const korbit = require('./exchanges/korbit');
 const kraken = require('./exchanges/kraken');
 const poloniex = require('./exchanges/poloniex');
+const bitstamp = require('./exchanges/bitstamp');
 
 const exchanges = {
 	bithumb,
 	coinone,
 	korbit,
 	kraken,
-	poloniex
+	poloniex,
+	bitstamp
 };
 
 function availableExchanges() {
