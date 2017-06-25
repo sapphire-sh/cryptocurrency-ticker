@@ -59,6 +59,10 @@ describe('ticker', () => {
 			pair: 'btc_xrp'
 		},
 		{
+			exchange: 'bitfinex',
+			pair: 'xrp_usd'
+    },
+    {
 			exchange: 'bitstamp',
 			pair: 'xrp_usd'
     },

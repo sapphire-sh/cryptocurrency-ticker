@@ -5,6 +5,7 @@ const coinone = require('./exchanges/coinone');
 const korbit = require('./exchanges/korbit');
 const kraken = require('./exchanges/kraken');
 const poloniex = require('./exchanges/poloniex');
+const bitfinex = require('./exchanges/bitfinex');
 const bitstamp = require('./exchanges/bitstamp');
 const uphold = require('./exchanges/uphold');
 
@@ -14,6 +15,7 @@ const exchanges = {
 	korbit,
 	kraken,
 	poloniex,
+	bitfinex,
 	bitstamp,
 	uphold
 };
