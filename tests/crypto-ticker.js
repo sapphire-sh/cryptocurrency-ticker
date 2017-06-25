@@ -59,6 +59,10 @@ describe('ticker', () => {
 			pair: 'btc_xrp'
 		},
 		{
+			exchange: 'liqui',
+			pair: 'gno_btc'
+		},
+    {
 			exchange: 'gdax',
 			pair: 'btc_eth'
 		},
