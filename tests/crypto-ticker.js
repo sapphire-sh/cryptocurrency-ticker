@@ -61,6 +61,10 @@ describe('ticker', () => {
 		{
 			exchange: 'bitstamp',
 			pair: 'xrp_usd'
+    },
+    {
+			exchange: 'uphold',
+			pair: 'xpd_usd'
 		},
 	].forEach((e) => {
 		it(`should return a ticker: ${e.exchange}`, (done) => {
