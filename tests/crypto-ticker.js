@@ -58,6 +58,10 @@ describe('ticker', () => {
 			exchange: 'poloniex',
 			pair: 'btc_xrp'
 		},
+		{
+			exchange: 'lykke',
+			pair: 'btc_jpy'
+		},
 	].forEach((e) => {
 		it(`should return a ticker: ${e.exchange}`, (done) => {
 			ticker.ticker(e.exchange, e.pair).then((ticker) => {
