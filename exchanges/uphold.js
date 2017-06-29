@@ -73,7 +73,6 @@ module.exports = {
 					timeout: 2000
 				}, (err, res, body) => {
 					if(!err && res.statusCode === 200) {
-						console.log(body);
 						const x = JSON.parse(body);
 						resolve({
 							exchange: 'uphold',
